@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lloyd Jefferson Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+    integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- подключил изображение солнца и луны (dark theme) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script type="module" crossorigin src="/js_110_mikhailovak/index.js"></script>
+  <link rel="modulepreload" crossorigin href="/js_110_mikhailovak/assets/vendor-Dq7z3oN3.js">
+  <link rel="stylesheet" crossorigin href="/js_110_mikhailovak/assets/vendor-vixjBPHE.css">
+  <link rel="stylesheet" crossorigin href="/js_110_mikhailovak/assets/index-Cbp-0Gg6.css">
+</head>
+
+<body>
+  <header class="header">
+  <div class="container">
+    <nav class="header-nav">
+      <a href="./index.html" class="logo header-logo">Lloyd<span class="span">Jefferson.</span></a>
+
+      <div class="switch">
+        <input type="checkbox" id="toggle" />
+        <label for="toggle" class="label">
+          <i class="fa-solid fa-moon"></i>
+          <i class="fa-solid fa-sun"></i>
+        </label>
+      </div>
+
+      <!-- <button type="button" class="theme-btn" id="theme-btn" data-toggle-theme>
+        <svg class="theme-icon" width="20" height="20">
+          <use href="./img/icons.svg#icon-light"></use>
+        </svg>
+      </button> -->
+
+      <ul class="header-nav-list">
+        <li class="header-nav-item">
+          <a href="#about-me" class="link header-nav-link">About me</a>
+        </li>
+        <li class="header-nav-item">
+          <a href="#Projects" class="link header-nav-link">Projects</a>
+        </li>
+        <li class="header-nav-item">
+          <a href="#contacts" class="link header-nav-link">Contacts</a>
+        </li>
+      </ul>
+
+      <button type="button" class="burger-btn" id="burger-btn" data-menu-open>
+        <svg class="burger-icon" width="32" height="32">
+          <use href="/js_110_mikhailovak/assets/icons-BMAn3I_a.svg#icon-burger"></use>
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+  <div class="mobile-menu" data-menu>
+    <div class="menu-modal-head container">
+        <a href="./index.html" class="logo header-logo">Lloyd<span class="span">Jefferson.</span></a>
+        <button type="button" class="close-button" data-menu-close>
+            <svg class="close-icon" width="32" height="32">
+                <use href="/js_110_mikhailovak/assets/icons-BMAn3I_a.svg#icon-cross"></use>
+            </svg>
+        </button>
+    </div>
+    <div class="mobile-menu-container container">
+
+        <nav class="mobile-menu-nav">
+            <ul class="menu-nav-list">
+                <li><a class="nav-menu-link" href="#about-me">About me</a></li>
+                <li><a class="nav-menu-link" href="#Projects">Projects</a></li>
+                <li><a class="nav-menu-link" href="#contacts">Contacts</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+  <main>
+
+    <section class="section hero">
+    <div class="container hero-container">
+        <div class="hero-content">
+            <h1 class="hero-title">Hello, I am <picture>
+                    <source srcset="data:image/jpeg;base64,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 1x, /js_110_mikhailovak/assets/hero-avatar-2x-DoSVYt6H.jpg 2x"
+                        type="image/jpeg">
+                    <img class="hero-avatar" src="data:image/jpeg;base64,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" alt="Avatar" width="108" height="108">
+                </picture> <span class="span">Fullstack Developer</span></h1>
+
+            <div class="hero-wrapper">
+                <a class="hero-link" href="#contacts">
+                    <svg class="order-project-arrow" width="28" height="28">
+                        <use href="/js_110_mikhailovak/assets/icons-BMAn3I_a.svg#icon-arrow"></use>
+                    </svg>
+                    <p class="hero-text">ORDER THE PROJECT</p>
+                </a>
+                <p class="hero-text">I WORK WITH PEOPLE ALL OVER THE WORLD TO CREATE <span
+                        class="span">IMPRESSIVE</span>
+                    AND <span class="hero-text-span">FUNCTIONAL WEBSITES</span> THAT REFLECT EACH CLIENT'S UNIQUE
+                    PERSONALITY.</p>
+            </div>
+        </div>
+    </div>
+
+    <ul class="hero-soc-links-container">
+        <li><a href="https://www.instagram.com/goitclub/" target="_blank" rel="noopener noreferrer nofollow">Instagram</a></li>
+        <li><a href="https://www.facebook.com/goITclub/" target="_blank" rel="noopener noreferrer nofollow">Facebook</a></li>
+        <li><a href="https://www.linkedin.com/school/goit-start-your-career-in-it/posts/?feedView=all"
+                target="_blank" rel="noopener noreferrer nofollow">Linkedin</a></li>
+        <li><a href="https://mikhailovak.github.io/fullstack-portfolio-goit/" target="_blank" rel="noopener noreferrer nofollow">Github</a></li>
+    </ul>
+</section>
+    <section class="about-section section" id="about-me">
+  <div class="container about-container">
+    <h2 class="about-title">ABOUT <span class="span">ME</span></h2>
+    <div class="picture-bio">
+      <picture>
+        <source
+          srcset="/js_110_mikhailovak/assets/about-desktop-1x-CKgLa7Bp.jpg 1x, /js_110_mikhailovak/assets/about-desktop-2x-CeiIqQl6.jpg 2x"
+          media="(min-width:1280px)"
+        />
+        <source
+          srcset="/js_110_mikhailovak/assets/about-tablet-1x-Cuh4kZHG.jpg 1x, /js_110_mikhailovak/assets/about-tablet-2x-wqAJKqVn.jpg 2x"
+          media="(min-width:768px)"
+        />
+        <source
+          srcset="/js_110_mikhailovak/assets/about-mobile-1x-DMh-0CKT.jpg 1x, /js_110_mikhailovak/assets/about-mobile-2x-BJOhzVwk.jpg 2x"
+          media="(max-width:767px)"
+        />
+        <img
+          class="about-foto"
+          src="/js_110_mikhailovak/assets/about-desktop-1x-CKgLa7Bp.jpg"
+          alt="Lloyd Jefferson"
+          width="320"
+        />
+      </picture>
+
+      <div class="about-bio">
+        <h3 class="about-subtitle">BIO</h3>
+        <p class="about-text text-one">
+          I'm Lloyd Jefferson, a talented programmer specializing in software
+          development. My expertise spans various programming languages and
+          technologies, and I am dedicated to continually enhancing my skills. I
+          thrive on seeking unconventional and creative solutions to problems,
+          leveraging a high level of analytical skills to effectively tackle
+          even the most challenging tasks.
+        </p>
+        <p class="about-text text-two">
+          Adaptable to both independent and team-oriented work, I collaborate
+          seamlessly with colleagues, exchanging ideas and finding optimal
+          solutions. My professional maturity enables me to navigate challenges
+          and stressful situations with a calm demeanor, maintaining a
+          consistently high quality of work. Committed to self-improvement, I
+          actively engage in studying new technologies and practices to stay
+          current with the latest innovations in the field.
+        </p>
+      </div>
+    </div>
+    <div class="about-tab">
+      <div class="about-educ">
+        <h3 class="about-subtitle">EDUCATION</h3>
+        <ul class="about-list">
+          <li class="about-list-item">
+            <p class="about-text about-item">
+              2018 - 2019 / Frontend Development Diploma, GoIT IT School, New
+              York
+            </p>
+          </li>
+          <li class="about-list-item">
+            <p class="about-text about-item">
+              2019 - 2020 / Advanced Web Development Certificate, GoIT IT
+              School, New York
+            </p>
+          </li>
+          <li class="about-list-item">
+            <p class="about-text about-item">
+              2020 - 2022 / Advanced Blender Animation Techniques, Udemy
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div class="about-role">
+        <h3 class="about-subtitle">ROLE</h3>
+        <ul class="about-list">
+          <li class="about-list-item">
+            <p class="about-text about-item">Frontend development</p>
+          </li>
+          <li class="about-list-item">
+            <p class="about-text about-item">HeadlessCMS, Wordpress</p>
+          </li>
+          <li class="about-list-item">
+            <p class="about-text about-item">Blender (enjoy)</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="tech-skills section">
+    <h2 class="tech-nav">Tech Skills</h2>
+    <div class="tech-content">
+        <div class="tech-line tech-one-background">
+            <div class="tech-line-track">
+                <p class="tech-item-one">HTML/CSS</p>
+                <p class="tech-item-one">REACT</p>
+                <p class="tech-item-one">NODE.JS</p>
+                <p class="tech-item-one">REACT NATIVE</p>
+                <p class="tech-item-one">TYPESCRIPT</p>
+                <p class="tech-item-one">HTML/CSS</p>
+                <p class="tech-item-one">REACT</p>
+                <p class="tech-item-one">NODE.JS</p>
+                <p class="tech-item-one">REACT NATIVE</p>
+                <p class="tech-item-one">TYPESCRIPT</p>
+                <p class="tech-item-one">HTML/CSS</p>
+                <p class="tech-item-one">REACT</p>
+                <p class="tech-item-one">NODE.JS</p>
+                <p class="tech-item-one">REACT NATIVE</p>
+                <p class="tech-item-one">TYPESCRIPT</p>
+            </div>
+        </div>
+
+        <div class="tech-line tech-two-background">
+            <div class="tech-line-track-second">
+                <p class="tech-item-two">HTML/CSS</p>
+                <p class="tech-item-two">REACT</p>
+                <p class="tech-item-two">NODE.JS</p>
+                <p class="tech-item-two">REACT NATIVE</p>
+                <p class="tech-item-two">TYPESCRIPT</p>
+                <p class="tech-item-two">HTML/CSS</p>
+                <p class="tech-item-two">REACT</p>
+                <p class="tech-item-two">NODE.JS</p>
+                <p class="tech-item-two">REACT NATIVE</p>
+                <p class="tech-item-two">TYPESCRIPT</p>
+                <p class="tech-item-two">HTML/CSS</p>
+                <p class="tech-item-two">REACT</p>
+                <p class="tech-item-two">NODE.JS</p>
+                <p class="tech-item-two">REACT NATIVE</p>
+                <p class="tech-item-two">TYPESCRIPT</p>
+            </div>
+        </div>
+    </div>
+</section>
+    <section class="my-projects-container section " id="Projects">
+    <div class="container">
+        <h2 class="projects"><span class="my-span">MY</span><span class="project-text">PROJECTS</span></h2>
+
+        <ul class="gallery-project" id="gallery-project">
+
+        </ul>
+        <button type="button" class="load-btn-projects" id="loadMoreBtn">LOAD MORE</button>
+    </div>
+</section>
+    <section class="section-benefits section">
+  <div class="container">
+    <!-- Title-->
+    <div class="benefits-title-container">
+      <h2 class="benefits-title">
+        <span class="benefits-span-title">Benefits</span> of working with me
+      </h2>
+    </div>
+    <!-- Benefits List -->
+    <div class="benefits-list-container">
+      <!-- Benefits Image -->
+      <img
+        src="/js_110_mikhailovak/assets/benefits-decor1x-DY-DhUd1.png"
+        srcset="/js_110_mikhailovak/assets/benefits-decor1x-DY-DhUd1.png 1x, /js_110_mikhailovak/assets/benefits-decor2x-68U1RWf_.png 2x"
+        alt="Decor"
+        class="benefits-background"
+      />
+      <ul class="benefits-list">
+        <!-- ----Hidden---- -->
+        <li class="benefits-item second-special-benefits-item">
+          <!-- Benefits Icon -->
+          <div class="benefits-icon-background">
+            <svg class="benefits-icon" width="24" height="24">
+              <use
+                href="/js_110_mikhailovak/assets/icons-BMAn3I_a.svg#icon-cross"
+              ></use>
+            </svg>
+          </div>
+          <!-- Benefits text -->
+          <h3 class="benefits-heading">Expertise</h3>
+          <p class="benefits-description">
+            With extensive experience in development, I have a deep
+            understanding of programming and website development.
+          </p>
+        </li>
+        <li class="benefits-item special-benefits-item">
+          <!-- Benefits Icon -->
+          <div class="benefits-icon-background">
+            <svg class="benefits-icon" width="24" height="24">
+              <use
+                href="/js_110_mikhailovak/assets/icons-BMAn3I_a.svg#icon-cross"
+              ></use>
+            </svg>
+          </div>
+          <!-- Benefits text -->
+          <h3 class="benefits-heading">Expertise</h3>
+          <p class="benefits-description">
+            With extensive experience in development, I have a deep
+            understanding of programming and website development.
+          </p>
+        </li>
+        <!-- ----Hidden---- -->
+        <li class="benefits-item">
+          <!-- Benefits Icon -->
+          <div class="benefits-icon-background">
+            <svg class="benefits-icon" width="24" height="24">
+              <use
+                href="/js_110_mikhailovak/assets/icons-BMAn3I_a.svg#icon-user"
+              ></use>
+            </svg>
+          </div>
+          <!-- Benefits text -->
+          <h3 class="benefits-heading">Expertise</h3>
+          <p class="benefits-description">
+            With extensive experience in development, I have a deep
+            understanding of programming and website development.
+          </p>
+        </li>
+        <li class="benefits-item">
+          <!-- Benefits Icon -->
+          <div class="benefits-icon-background">
+            <svg class="benefits-icon" width="24" height="24">
+              <use
+                href="/js_110_mikhailovak/assets/icons-BMAn3I_a.svg#icon-message"
+              ></use>
+            </svg>
+          </div>
+          <!-- Benefits text -->
+          <h3 class="benefits-heading">Communication</h3>
+          <p class="benefits-description">
+            Understanding your needs and wants is my priority and I am always
+            available for discussions and open to corrections.
+          </p>
+        </li>
+        <li class="benefits-item">
+          <!-- Benefits Icon -->
+          <div class="benefits-icon-background">
+            <svg class="benefits-icon" width="24" height="24">
+              <use
+                href="/js_110_mikhailovak/assets/icons-BMAn3I_a.svg#icon-brush"
+              ></use>
+            </svg>
+          </div>
+          <!-- Benefits text -->
+          <h3 class="benefits-heading">Art</h3>
+          <p class="benefits-description">
+            Thanks to my creative nature, I am ready to accept challenges and
+            help you bring your ideas to life.
+          </p>
+        </li>
+        <li class="benefits-item">
+          <!-- Benefits Icon -->
+          <div class="benefits-icon-background">
+            <svg class="benefits-icon" width="24" height="24">
+              <use
+                href="/js_110_mikhailovak/assets/icons-BMAn3I_a.svg#icon-time"
+              ></use>
+            </svg>
+          </div>
+          <!-- Benefits text -->
+          <h3 class="benefits-heading">Urgent execution</h3>
+          <p class="benefits-description">
+            I understand how important time is to you. Ready to work quickly and
+            efficiently, without reducing the quality of work.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+    <section class="section-faq section">
+  <div class="container faq-container">
+    <div class="faq-title-container">
+      <h2 class="faq-title">
+        frequently asked <span class="span">question</span>
+      </h2>
+
+      <img src="/js_110_mikhailovak/assets/faq-background-Mwq7nZrT.png" alt="dots" class="faq-image" />
+    </div>
+
+    <ul class="faq-list">
+      <li class="faq-item ac">
+        <h3 class="ac-header">
+          <button type="button" class="ac-trigger" id="ac-trigger-first">
+            <span class="text faq-item-title"
+              >What programming languages ​​are most often used in your
+              project?</span
+            >
+            <svg class="arrow-icon" width="24" height="24">
+              <use href="/js_110_mikhailovak/assets/icons-BMAn3I_a.svg#icon-arrow-bottom"></use>
+            </svg>
+          </button>
+        </h3>
+        <p class="faq-item-answer ac-panel">
+          In the field of web development, there are various technologies and
+          programming languages. Typically, this includes a combination of
+          frontend (client side) and backend (server side) languages.
+        </p>
+      </li>
+      <li class="faq-item ac">
+        <h3 class="ac-header">
+          <button type="button" class="ac-trigger" id="ac-trigger-second">
+            <span class="text faq-item-title"
+              >What are the deadlines for the project?</span
+            >
+            <svg class="arrow-icon" width="24" height="24">
+              <use href="/js_110_mikhailovak/assets/icons-BMAn3I_a.svg#icon-arrow-bottom"></use>
+            </svg>
+          </button>
+        </h3>
+        <p class="faq-item-answer ac-panel">
+          The terms of project implementation depend to a large extent on a
+          number of factors, such as the scope of the project, its complexity,
+          and the availability of resources. Determining exact deadlines is a
+          difficult task, and it usually occurs during the planning phase of the
+          project.
+        </p>
+      </li>
+      <li class="faq-item ac">
+        <h3 class="ac-header">
+          <button type="button" class="ac-trigger" id="ac-trigger-third">
+            <span class="text faq-item-title"
+              >What payment methods do you accept?</span
+            >
+            <svg class="arrow-icon" width="24" height="24">
+              <use href="/js_110_mikhailovak/assets/icons-BMAn3I_a.svg#icon-arrow-bottom"></use>
+            </svg>
+          </button>
+        </h3>
+        <p class="faq-item-answer ac-panel">
+          Payment through credit and debit cards such as Visa, MasterCard,
+          specialized electronic payment systems such as PayPal, as well as
+          payments in cryptocurrencies such as Bitcoin, Ethereum and others.
+        </p>
+      </li>
+      <li class="faq-item ac">
+        <h3 class="ac-header">
+          <button type="button" class="ac-trigger" id="ac-trigger-fourth">
+            <span class="text faq-item-title">How can I contact you?</span>
+            <svg class="arrow-icon" width="24" height="24">
+              <use href="/js_110_mikhailovak/assets/icons-BMAn3I_a.svg#icon-arrow-bottom"></use>
+            </svg>
+          </button>
+        </h3>
+        <p class="faq-item-answer ac-panel">
+          In the field of web development, there are various technologies and
+          programming languages. Typically, this includes a combination of
+          frontend (client side) and backend (server side) languages.
+        </p>
+      </li>
+      <li class="faq-item ac">
+        <h3 class="ac-header">
+          <button type="button" class="ac-trigger" id="ac-trigger-fifth">
+            <span class="text faq-item-title"
+              >Do you provide advice or support?</span
+            >
+            <svg class="arrow-icon" width="24" height="24">
+              <use href="/js_110_mikhailovak/assets/icons-BMAn3I_a.svg#icon-arrow-bottom"></use>
+            </svg>
+          </button>
+        </h3>
+        <p class="faq-item-answer ac-panel">
+          The terms of project implementation depend to a large extent on a
+          number of factors, such as the scope of the project, its complexity,
+          and the availability of resources. Determining exact deadlines is a
+          difficult task, and it usually occurs during the planning phase of the
+          project.
+        </p>
+      </li>
+      <li class="faq-item ac">
+        <h3 class="ac-header">
+          <button type="button" class="ac-trigger" id="ac-trigger-sixth">
+            <span class="text faq-item-title"
+              >What does the process of developing a software product look like
+              from idea to implementation?</span
+            >
+            <svg class="arrow-icon" width="24" height="24">
+              <use href="/js_110_mikhailovak/assets/icons-BMAn3I_a.svg#icon-arrow-bottom"></use>
+            </svg>
+          </button>
+        </h3>
+        <p class="faq-item-answer ac-panel">
+          Payment through credit and debit cards such as Visa, MasterCard,
+          specialized electronic payment systems such as PayPal, as well as
+          payments in cryptocurrencies such as Bitcoin, Ethereum and others.
+        </p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+    <section class="reviews section">
+  <div class="container reviews-container">
+    <h2 class="reviews-title">reviews</h2>
+
+    <div class="swiper">
+      <ul class="swiper-wrapper" id="reviewsGallery"></ul>
+
+      <!-- This is pagination -->
+      <!-- <div class="swiper-pagination"></div> -->
+
+      <div class="reviews-navigation">
+        <div class="swiper-button-prev">
+          <svg class="reviews-navigation-prev-icon">
+            <use href="/js_110_mikhailovak/assets/icons-BMAn3I_a.svg#icon-arrow-gray"></use>
+          </svg>
+        </div>
+        <div class="swiper-button-next">
+          <svg class="reviews-navigation-icon">
+            <use href="/js_110_mikhailovak/assets/icons-BMAn3I_a.svg#icon-arrow-gray"></use>
+          </svg>
+        </div>
+      </div>
+
+      <!-- This is scrollbar -->
+      <!-- <div class="swiper-scrollbar"></div> -->
+    </div>
+  </div>
+</section>
+
+    <section class="section-together section" id="contacts">
+  <div class="container work-together-container">
+    <div class="work-together-section-left">
+      <h2 class="section-title work-together-title">
+        let’s
+        <span class="span text-split letters-fade-in-random"
+          >work together</span
+        >
+      </h2>
+      <div class="work-together-decor"></div>
+      <p class="work-together-text">
+        Contact me to transform your ideas into exceptional solutions.
+      </p>
+      <ul class="work-together-list">
+        <li class="work-together-item">
+          <svg
+            class="work-together-icon"
+            width="20"
+            height="20"
+            aria-label="Phone icon"
+            role="img"
+          >
+            <use href="/js_110_mikhailovak/assets/icons-BMAn3I_a.svg#icon-phone"></use>
+          </svg>
+          <a href="tel:+380904567890" class="link-hover work-together-link"
+            >+38 090 456 78 90</a
+          >
+        </li>
+        <li class="work-together-item">
+          <svg
+            class="work-together-icon"
+            width="20"
+            height="20"
+            aria-label="Mail icon"
+            role="img"
+          >
+            <use href="/js_110_mikhailovak/assets/icons-BMAn3I_a.svg#icon-mail"></use>
+          </svg>
+          <a
+            href="mailto:lloydjefferson@gmail.com"
+            class="link-hover work-together-link"
+            >lloydjefferson@gmail.com</a
+          >
+        </li>
+        <li class="work-together-item">
+          <svg
+            class="work-together-icon"
+            width="20"
+            height="20"
+            aria-label="Location icon"
+            role="img"
+          >
+            <use href="/js_110_mikhailovak/assets/icons-BMAn3I_a.svg#icon-location"></use>
+          </svg>
+          <a href="https://www.google.pl/maps/place/Nowy+Jork,+Stany+Zjednoczone/@40.697538,-74.3100097,96671m/data=!3m2!1e3!4b1!4m6!3m5!1s0x89c24fa5d33f083b:0xc80b8f06e177fe62!8m2!3d40.7127753!4d-74.0059728!16zL20vMDJfMjg2?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoJLDEwMjExMjMzSAFQAw%3D%3D" class="link-hover work-together-link" target="_blank"
+              rel="noopener noreferrer nofollow">USA, New York</a>
+        </li>
+      </ul>
+    </div>
+    <div class="work-together-section-right">
+      <form class="work-together-form">
+        <input
+          class="work-together-input"
+          name="email"
+          type="email"
+          placeholder="Your email*"
+          pattern="[\-a-zA-Z0-9~!$%^&amp;*_=+\}\{'?]+(\.[\-a-zA-Z0-9~!$%^&amp;*_=+\}\{'?]+)*@[a-zA-Z0-9_][\-a-zA-Z0-9_]*(\.[\-a-zA-Z0-9_]+)*\.[cC][oO][mM](:[0-9]{1,5})?"
+          id="enter-email"
+          autocomplete="email"
+          required
+        />
+        <label for="enter-email" class="visually-hidden">Enter email</label>
+        <svg
+          class="work-together-success"
+          width="14"
+          height="14"
+          aria-hidden="true"
+        >
+          <use href="/js_110_mikhailovak/assets/icons-BMAn3I_a.svg#icon-success"></use>
+        </svg>
+        <p class="work-together-errorInput">Invalid email, try again</p>
+        <textarea
+          class="work-together-message"
+          name="message"
+          placeholder="Message"
+          minlength="10"
+          id="enter-message"
+          autocomplete="off"
+          required
+        ></textarea>
+        <label for="enter-message" class="visually-hidden">Enter message</label>
+        <p class="work-together-errorMessage">The field must be filled</p>
+        <button
+          class="work-together-submit"
+          type="submit"
+          aria-label="Send message"
+        >
+          SEND MESSAGE
+        </button>
+      </form>
+      <span class="work-together-loader is-hide" aria-hidden="true"></span>
+    </div>
+    <div
+      class="modal-overlay"
+      id="modal-overlay"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        class="modal"
+        role="document"
+        aria-labelledby="modal-title"
+        aria-describedby="modal-message"
+      >
+        <button
+          type="button"
+          class="modal-close-btn"
+          id="modal-close-btn"
+          aria-label="Close modal window"
+        >
+          <svg class="close-icon" width="32" height="32" aria-hidden="true">
+            <use href="/js_110_mikhailovak/assets/icons-BMAn3I_a.svg#icon-cross"></use>
+          </svg>
+        </button>
+        <h3 class="modal-title" id="modal-title">
+          Thank you for your interest in cooperation!
+        </h3>
+        <p class="modal-message" id="modal-message">
+          The manager will contact you shortly to discuss further details and
+          opportunities for cooperation. Please stay in touch.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="footer">
+  <div class="container container-footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <a href="/" class="logo">
+          <h2>
+            <span class="bold">LLOYD</span><span class="green">JEFFERSON.</span>
+          </h2>
+        </a>
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              >Instagram</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              >Facebook</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              >Linkedin</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.github.com"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              >GitHub</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-box">
+      <p>© Copyright 2024. Made by LloydJefferson</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+
+</html>
